@@ -39,3 +39,12 @@
 - Criando mais estados e a maneira de trabalhar com eles em function components.
 - Como receber propriedades em um componente de função.
 - Desconstrução de Objetos no JS.
+
+# Aula 05:
+
+## O que aprendemos nessa aula:
+
+- Propriedade erro do TextField e HelperText dentro de inputs do MaterialUI.
+- Usando o estado para controlar a exibição de erros.
+- Recebendo validação de maneira externa.
+- Como deixar os componentes mais reutilizáveis.
