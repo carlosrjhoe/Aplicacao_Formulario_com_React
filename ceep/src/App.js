@@ -1,10 +1,10 @@
 import { Component } from "react";
 import "./App.css";
-import FormularioCadastro from "./components/FormularioCadastro/DadosPessoais";
 import "fontsource-roboto";
-
 import {Container, Typography } from '@material-ui/core';
+import FormularioCadastro from "./components/FormularioCadastro/DadosPessoais";
 import DadosUsuarios from "./components/FormularioCadastro/DadosUsuarios";
+
 class App extends Component {
   render() {
     return (
