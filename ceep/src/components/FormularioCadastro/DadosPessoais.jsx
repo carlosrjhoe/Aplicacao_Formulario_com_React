@@ -1,95 +1,95 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { TextField, Button, Switch, FormControlLabel } from "@material-ui/core";
 
 function DadosPessoais({ aoEnviar, validaCPF }) {
-  const [nome, setNome] = useState("");
-  const [sobrenome, setSobrenome] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [promocoes, setPromocoes] = useState("true");
-  const [novidades, setNovidades] = useState("false");
-  const [erros, setErros] = useState({ cpf: { valido: true, texto: "" } });
+    const [nome, setNome] = useState("");
+    const [sobrenome, setSobrenome] = useState("");
+    const [cpf, setCpf] = useState("");
+    const [promocoes, setPromocoes] = useState("true");
+    const [novidades, setNovidades] = useState("false");
+    const [erros, setErros] = useState({ cpf: { valido: true, texto: "" } });
 
-  return (
-    <form
-      onSubmit={(event) => {
-        event.preventDefault();
-        aoEnviar.aoEnviar({ nome, sobrenome, cpf, novidades, promocoes });
-      }}
-    >
-      <TextField
-        value={nome}
-        onChange={(event) => {
-          setNome(event.target.value);
-        }}
-        id="nome"
-        label="Nome"
-        variant="outlined"
-        margin="normal"
-        fullWidth
-      />
-      <TextField
-        value={sobrenome}
-        onChange={(event) => {
-          setSobrenome(event.target.value);
-        }}
-        id="sobrenome"
-        label="Sobrenome"
-        variant="outlined"
-        margin="normal"
-        fullWidth
-      />
-      <TextField
-        value={cpf}
-        onChange={(event) => {
-          setCpf(event.target.value);
-        }}
-        onBlur={(event) => {
-          const eValido = validaCPF(cpf);
-          setErros({ cpf: eValido });
-        }}
-        error={erros.cpf.valido}
-        helperText={erros.cpf.texto}
-        id="cpf"
-        label="Cpf"
-        variant="outlined"
-        margin="normal"
-        fullWidth
-      />
-
-      <FormControlLabel
-        label="Promoçôes"
-        control={
-          <Switch
-            checked={promocoes}
-            onChange={(event) => {
-              setPromocoes(event.target.checked);
+    return (
+        <form
+            onSubmit={(event) => {
+                event.preventDefault();
+                aoEnviar.aoEnviar({ nome, sobrenome, cpf, novidades, promocoes });
             }}
-            name="promocoes"
-            defaultChecked={promocoes}
-            color="primary"
-          />
-        }
-      />
-      <FormControlLabel
-        label="Novidades"
-        control={
-          <Switch
-            checked={novidades}
-            onChange={(event) => {
-              setNovidades(event.target.checked);
-            }}
-            name="novidades"
-            defaultChecked={novidades}
-            color="primary"
-          />
-        }
-      />
+        >
+            <TextField
+                value={nome}
+                onChange={(event) => {
+                    setNome(event.target.value);
+                }}
+                id="nome"
+                label="Nome"
+                variant="outlined"
+                margin="normal"
+                fullWidth
+            />
+            <TextField
+                value={sobrenome}
+                onChange={(event) => {
+                    setSobrenome(event.target.value);
+                }}
+                id="sobrenome"
+                label="Sobrenome"
+                variant="outlined"
+                margin="normal"
+                fullWidth
+            />
+            <TextField
+                value={cpf}
+                onChange={(event) => {
+                    setCpf(event.target.value);
+                }}
+                onBlur={(event) => {
+                    const eValido = validaCPF(cpf);
+                    setErros({ cpf: eValido });
+                }}
+                error={erros.cpf.valido}
+                helperText={erros.cpf.texto}
+                id="cpf"
+                label="Cpf"
+                variant="outlined"
+                margin="normal"
+                fullWidth
+            />
 
-      <Button type="submit" variant="contained" color="primary">
-        cadastrar
-      </Button>
-    </form>
-  );
+            <FormControlLabel
+                label="Promoçôes"
+                control={
+                    <Switch
+                        checked={promocoes}
+                        onChange={(event) => {
+                            setPromocoes(event.target.checked);
+                        }}
+                        name="promocoes"
+                        defaultChecked={promocoes}
+                        color="primary"
+                    />
+                }
+            />
+            <FormControlLabel
+                label="Novidades"
+                control={
+                    <Switch
+                        checked={novidades}
+                        onChange={(event) => {
+                            setNovidades(event.target.checked);
+                        }}
+                        name="novidades"
+                        defaultChecked={novidades}
+                        color="primary"
+                    />
+                }
+            />
+
+            <Button type="submit" variant="contained" color="primary">
+                cadastrar
+            </Button>
+        </form>
+    );
 }
 
 export default DadosPessoais;
