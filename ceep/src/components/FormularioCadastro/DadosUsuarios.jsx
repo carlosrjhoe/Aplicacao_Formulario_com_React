@@ -6,7 +6,7 @@ function DadosUsuarios() {
         <form>
             <TextField
                 id="email"
-                label="email"
+                label="Email"
                 type="email"
                 variant="outlined"
                 margin="normal"
@@ -14,7 +14,7 @@ function DadosUsuarios() {
             />
             <TextField
                 id="senha"
-                label="senha"
+                label="Senha"
                 type="password"
                 variant="outlined"
                 margin="normal"

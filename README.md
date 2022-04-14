@@ -48,3 +48,10 @@
 - Usando o estado para controlar a exibição de erros.
 - Recebendo validação de maneira externa.
 - Como deixar os componentes mais reutilizáveis.
+
+# Aula 06:
+
+## O que aprendemos nessa aula:
+
+- Boas práticas de UX ao trabalharmos com formulários.
+- Por que separar um formulário em muitas partes.
