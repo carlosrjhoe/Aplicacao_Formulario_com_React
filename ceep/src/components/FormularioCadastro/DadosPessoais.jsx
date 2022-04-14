@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import { TextField, Button, Switch, FormControlLabel } from "@material-ui/core";
 
-function DadosPessoais({ aoEnviar, validaCPF }) {
+function DadosPessoais({ aoEnviar, validarCPF }) {
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
   const [cpf, setCpf] = useState("");
-  const [promocoes, setPromocoes] = useState("true");
-  const [novidades, setNovidades] = useState("false");
+  const [promocoes, setPromocoes] = useState(true);
+  const [novidades, setNovidades] = useState(false);
   const [erros, setErros] = useState({ cpf: { valido: true, texto: "" } });
-
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        aoEnviar.aoEnviar({ nome, sobrenome, cpf, novidades, promocoes });
+        aoEnviar({ nome, sobrenome, cpf, novidades, promocoes });
       }}
     >
       <TextField
@@ -44,20 +43,20 @@ function DadosPessoais({ aoEnviar, validaCPF }) {
           setCpf(event.target.value);
         }}
         onBlur={(event) => {
-          const eValido = validaCPF(cpf);
-          setErros({ cpf: eValido });
+          const ehValido = validarCPF(cpf);
+          setErros({ cpf: ehValido });
         }}
-        error={erros.cpf.valido}
+        error={!erros.cpf.valido}
         helperText={erros.cpf.texto}
-        id="cpf"
-        label="Cpf"
+        id="CPF"
+        label="CPF"
         variant="outlined"
         margin="normal"
         fullWidth
       />
 
       <FormControlLabel
-        label="Promoçôes"
+        label="Promoções"
         control={
           <Switch
             checked={promocoes}
@@ -65,11 +64,11 @@ function DadosPessoais({ aoEnviar, validaCPF }) {
               setPromocoes(event.target.checked);
             }}
             name="promocoes"
-            defaultChecked={promocoes}
             color="primary"
           />
         }
       />
+
       <FormControlLabel
         label="Novidades"
         control={
@@ -79,14 +78,13 @@ function DadosPessoais({ aoEnviar, validaCPF }) {
               setNovidades(event.target.checked);
             }}
             name="novidades"
-            defaultChecked={novidades}
             color="primary"
           />
         }
       />
 
       <Button type="submit" variant="contained" color="primary">
-        cadastrar
+        Cadastrar
       </Button>
     </form>
   );
