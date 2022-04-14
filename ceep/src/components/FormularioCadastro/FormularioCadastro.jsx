@@ -5,7 +5,7 @@ import DadosEntrega from "./DadosEntrega";
 import { Typography } from "@material-ui/core";
 
 function FormularioCadastro({ aoEnviar, validaCPF }) {
-  const [etapaAtual, setEtapaAtual] = useState(1);
+  const [etapaAtual, setEtapaAtual] = useState(0);
 
   function formularioAtual(etapa) {
     switch (etapa) {

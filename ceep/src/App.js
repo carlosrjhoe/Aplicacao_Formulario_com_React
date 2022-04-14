@@ -14,8 +14,6 @@ class App extends Component {
           Formulário de cadastro
         </Typography>
         <FormularioCadastro aoEnviar={aoEnviarForm} validaCPF={validaCPF} />
-        <DadosUsuarios />
-        <DadosEntrega/>
       </Container>
     );
   }
