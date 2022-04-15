@@ -84,3 +84,12 @@
 - Boas práticas na reutilização de funcionalidades.
 - Usando contextos no React para resolver o problema de prop drilling.
 - Problemas de informações demais e complexidade de código.
+
+# Aula 10:
+
+## O que aprendemos nessa aula:
+
+- Como usar valore padrão dentro de um contexto.
+- Porque precisamos de Providers e quais suas vantagens.
+- Como criar Hooks Customizados e quais são suas regras.
+- Como compartilhar código entre componentes de maneira apropriada.
