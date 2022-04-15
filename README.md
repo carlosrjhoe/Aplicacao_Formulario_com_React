@@ -66,3 +66,12 @@
 - vantagens da injeção de dependências dentro do projeto.
 - Reutilização de componentes.
 - Refatoração do Switch case e melhores estruturas de código.
+
+# Aula 08:
+
+## O que aprendemos nessa aula:
+
+- Como lidar com problemas de assincronicidade.
+- Quando usar o Hook de UseEffect.
+- Ciclo de vida dos componentes funcionais.
+- Como utilizar o componente Stepper do MaterialUI.
